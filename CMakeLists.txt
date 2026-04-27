@@ -121,13 +121,10 @@ if(PAHO_ENABLE_CPACK)
 
   set(CPACK_PACKAGE_VENDOR "Eclipse Paho")
   set(CPACK_PACKAGE_NAME "Eclipse-Paho-MQTT-C")
-  install(FILES CONTRIBUTING.md epl-v20 edl-v10 README.md notice.html DESTINATION ${CMAKE_INSTALL_DOCDIR})
 
   if(WIN32)
     set(CPACK_GENERATOR "ZIP")
   elseif(PAHO_BUILD_DEB_PACKAGE)
-    install(FILES CONTRIBUTING.md epl-v20 edl-v10 README.md notice.html DESTINATION ${CMAKE_INSTALL_DOCDIR})
-
     set(CPACK_GENERATOR "DEB")
     configure_file(${CMAKE_SCRIPTS}/CPackDebConfig.cmake.in
       ${CMAKE_BINARY_DIR}/CPackDebConfig.cmake @ONLY
